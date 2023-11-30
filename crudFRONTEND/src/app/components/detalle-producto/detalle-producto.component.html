@@ -1,0 +1,27 @@
+<div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="btn-close" aria-label="Close" (click)="cerrarModal()"></button>
+    </div>
+    
+    <div class="modal-body">
+        <div class="container">
+            <div class="row mt-5" *ngIf="producto">
+              <div class="col-md-4 mx-auto">
+                  <div class="card" style="width: 18rem;">
+                      <div class="card-header text-center">
+                        Detalle del producto-numero:{{producto.id}}
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><b>ID: </b>{{producto.id}}</li>
+                        <li class="list-group-item"><b>ID: </b>{{producto.nombre}}</li>
+                        <li class="list-group-item"><b>ID: </b>{{producto.precio}}€</li>
+                      </ul>
+                    </div>
+              </div>
+          </div>
+          </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="cerrarModal()">Cerrar</button>
+    </div>
+  </div>

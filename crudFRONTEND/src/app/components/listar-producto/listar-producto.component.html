@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre Producto</th>
+        <th scope="col">Precio Producto</th>
+        <th scope="col">Ver Detalle producto</th>
+        <th scope="col">Editar producto</th>
+        <th scope="col">Borrar producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pro of producto">
+        <th>{{pro.id}}</th>
+        <td>{{pro.nombre}}</td>
+        <td>{{pro.precio}}€</td>
+        <td><button class="btn btn-outline-warning" routerLink="/detalle/{{pro.id}}" (click)="abrirDetalleProductoModal(pro.id)" ><i class="far fa-edit"></i> Ver detalle</button></td>
+        <td><button class="btn btn-outline-warning" routerLink="/actualizar/{{pro.id}}"><i class="far fa-edit"></i> Editar producto</button></td>
+        <td><button class="btn btn-outline-danger" (click)="borrar(pro.id)"><i class="far fa-trash-alt"></i> Borrar producto</button></td>
+      </tr>
+    </tbody>
+  </table>

@@ -15,8 +15,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/v1/producto")
-@CrossOrigin(origins = "http://localhost:40200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ProductoController {
+
 
     @Autowired
     private ProductoService productoService;
@@ -26,7 +27,7 @@ public class ProductoController {
         List<ProductoEntity> list = productoService.list();
         return new ResponseEntity<List<ProductoEntity>>(list, HttpStatus.OK);
     }
-    @GetMapping("/details/{id}")
+    @GetMapping("/detail/{id}")
     public ResponseEntity<ProductoEntity> getById(@PathVariable("id")  Integer id){
 
         if(!productoService.existById(id)){
@@ -37,7 +38,7 @@ public class ProductoController {
         }
     }
 
-    @GetMapping("/detailsName/{nombre}")
+    @GetMapping("/detailname/{nombre}")
     public ResponseEntity<ProductoEntity> getByNombre(@PathVariable("nombre")  String nombre){
 
         if(!productoService.existByNombre(nombre)){
